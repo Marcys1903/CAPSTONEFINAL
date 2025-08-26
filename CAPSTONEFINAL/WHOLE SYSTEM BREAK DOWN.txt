@@ -1,0 +1,194 @@
+📑 Development Breakdown for
+
+“Local Government Unit 4: Emergency Communication System with Incident Type Detection, Public Query Summarization, and Location-Based Alert Prioritization using DistilBERT”
+
+1. Project Planning & Requirements Analysis
+
+Understand stakeholders: Barangay/LGU officials, residents, emergency responders.
+
+Identify requirements: Functional (modules + AI features) and Non-functional (security, scalability, response time).
+
+Define scope & limitations:
+
+Scope: Covers emergency notifications, citizen alerts, automated feeds, and AI-based detection/summarization.
+
+Limitations: Requires internet for email & feed integration, AI limited by DistilBERT model capacity.
+
+Prepare system architecture diagram (Frontend, Backend, AI Module, Database).
+
+2. System Design
+a. Architecture
+
+Frontend: HTML + Tailwind CSS + JavaScript (UI for citizens & LGU staff).
+
+Backend: PHP (through XAMPP) with MySQL for data storage.
+
+AI Layer: Python + DistilBERT (integrated with PHP via API or Python-PHP bridge).
+
+Deployment: Localhost (XAMPP) for dev, cloud/LGU server for production.
+
+b. Database Schema (MySQL)
+
+users (admins, staff, citizens, roles)
+
+alerts (id, type, message, location, priority, timestamp)
+
+subscriptions (citizen_id, alert_types, language)
+
+logs (who sent, when, type)
+
+queries (citizen question, summary, classification)
+
+c. UI/UX Wireframes
+
+Admin dashboard (send alerts, monitor logs, respond to queries).
+
+Citizen dashboard (view alerts, manage subscriptions, ask questions).
+
+3. Core Modules Development (System Backbone)
+3.1 Mass Notification System
+
+Function: Send emergency alerts via SMS, Email, PA Systems.
+
+Implementation:
+
+SMS: API like Twilio (or local SMS gateway).
+
+Email: PHPMailer.
+
+PA System: Placeholder (simulate on UI).
+
+3.2 Alert Categorization
+
+Pre-defined categories: Weather, Earthquake, Bomb Threat, Fire, Flood, etc.
+
+Stored in DB for tagging.
+
+3.3 Two-Way Communication Interface
+
+Citizens can reply to alerts or submit queries (stored in queries).
+
+LGU dashboard shows incoming citizen concerns.
+
+3.4 Automated Warning Integration
+
+Integrate RSS/API from PAGASA, PHIVOLCS.
+
+Auto-classify alerts into categories.
+
+3.5 Multilingual Support
+
+Store multiple translations in DB (English, Filipino, local dialect).
+
+Dropdown for language preference in citizen account.
+
+3.6 Citizen Subscription & Alert Preferences
+
+Citizens choose which alerts they want (e.g., earthquake only).
+
+Saves notification costs + avoids spam.
+
+3.7 Log & Audit Trail
+
+Tracks who sent, to whom, when, and delivery status.
+
+Stored in DB (logs).
+
+4. AI-Powered Special Features
+4.1 Incident Type Detection (DistilBERT Classification)
+
+Goal: Detect emergency type from text reports (e.g., “May lindol sa Payatas” → Earthquake).
+
+Steps:
+
+Train DistilBERT on labeled emergency data (Weather, Earthquake, Fire, etc.).
+
+Expose AI via Python API (/classify) → returns incident type.
+
+Auto-assign category in DB.
+
+4.2 Public Query Summarization
+
+Goal: Summarize citizen queries for faster LGU response.
+
+Steps:
+
+Collect queries (queries table).
+
+Pass text to DistilBERT summarization model.
+
+Display short summaries to LGU dashboard.
+
+4.3 Location-Based Alert Prioritization
+
+Goal: Prioritize alerts based on severity + proximity.
+
+Steps:
+
+Citizen registration includes location (barangay).
+
+When sending alerts, system ranks based on affected barangays.
+
+DistilBERT can help classify urgency/severity of alert text.
+
+5. Integration of AI with System
+
+Setup DistilBERT in Python (VS Code or Jupyter).
+
+Model Deployment:
+
+Option A: Flask/FastAPI → expose AI as REST API.
+
+Option B: Local Python script called by PHP exec().
+
+PHP → Python Communication: Use HTTP requests to Flask API.
+
+Example Flow: Citizen query → PHP backend → Python (DistilBERT) → summarized result → PHP DB.
+
+6. Testing Phase
+
+Unit Testing: Test each module (alerts, subscriptions, AI detection).
+
+Integration Testing: AI + PHP + MySQL + frontend.
+
+Load Testing: Simulate multiple citizen queries.
+
+User Testing: With barangay officials and mock citizens.
+
+7. Deployment
+
+Deploy in XAMPP (local) for testing.
+
+Final deployment on LGU server / cloud hosting.
+
+Secure with HTTPS, authentication (roles: admin, staff, citizen).
+
+8. Documentation
+
+System Manual (for users & admins).
+
+Technical Manual (installation, maintenance).
+
+AI Training Report (DistilBERT datasets, preprocessing, fine-tuning).
+
+9. Capstone Deliverables
+
+Working prototype system.
+
+Database schema + sample records.
+
+AI model (DistilBERT fine-tuned).
+
+Research paper:
+
+Background
+
+Related Studies
+
+System Design
+
+Implementation
+
+Results & Testing
+
+Conclusion & Recommendations

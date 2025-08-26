@@ -1,0 +1,49 @@
+Database + Backend Setup (Day 1–3)
+
+Create MySQL schema (users, alerts, subscriptions, logs, queries).
+
+Connect PHP (XAMPP) with DB (config.php).
+
+User Roles & Authentication (Day 3–4)
+
+Admin login/dashboard.
+
+Citizen registration/login.
+
+Mass Notification (Basic SMS/Email) (Day 5–6)
+
+Integrate PHPMailer (email).
+
+Use placeholder SMS gateway (can be simulated if no API yet).
+
+Create “Send Alert” form.
+
+Alert Categorization (Manual) (Day 6–7)
+
+Admin selects category (Weather, Earthquake, Fire).
+
+Save category in DB.
+
+Two-Way Communication (Basic Queries) (Day 8–9)
+
+Citizen can submit query → stored in DB.
+
+Admin can reply via dashboard → sent back via email/SMS.
+
+Citizen Subscription & Preferences (Day 9–10)
+
+Citizens choose which alerts they want.
+
+Store preferences in DB.
+
+Log & Audit Trail (Day 11–12)
+
+Save every alert sent into logs.
+
+Show logs on admin dashboard.
+
+UI/Frontend (Day 13–14)
+
+Build using HTML + Tailwind CSS + JS.
+
+Admin Dashboard + Citizen Portal.
