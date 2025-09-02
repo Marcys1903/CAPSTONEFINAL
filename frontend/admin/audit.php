@@ -377,5 +377,6 @@ $total_pages = ceil($total_logs / $limit);
           </div>
       </div>
   </main>
+  
 </body>
 </html>
