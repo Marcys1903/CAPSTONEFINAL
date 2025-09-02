@@ -109,7 +109,7 @@ $result = $conn->query("SELECT id, hotline_number, agency FROM hotlines ORDER BY
                   <?php endforeach; ?>
               </div>
           <?php endif; ?>
-          <form method="POST" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <form action="../backend/citizen/audit/create_audit.php" method="POST" class="grid grid-cols-1 md:grid-cols-3 gap-4">
               <input type="text" name="hotline_number" placeholder="Hotline Number" class="p-3 border rounded" required>
               <input type="text" name="agency" placeholder="Agency Name" class="p-3 border rounded" required>
               <button type="submit" name="add_hotline" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Add Hotline</button>
