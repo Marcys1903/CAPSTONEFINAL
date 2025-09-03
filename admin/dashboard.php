@@ -69,32 +69,17 @@ if ($rss && isset($rss->channel->item)) {
     <meta charset="UTF-8">
     <title>Admin Dashboard - LGU Emergency System</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 <body class="bg-gray-100 h-screen flex">
 
   <!-- Sidebar -->
-  <aside class="w-64 bg-gray-900 text-white flex flex-col overflow-y-auto h-screen">
-      <div class="p-6 text-2xl font-bold border-b border-gray-700">
-          Admin Panel
-      </div>
-      <nav class="flex-1 p-4 space-y-2">
-          <a href="dashboard.php" class="block py-2 px-3 rounded bg-gray-800"> Dashboard</a>
-          <a href="messages.php" class="block py-2 px-3 rounded hover:bg-gray-700"> Messages</a>
-          <a href="massnotify.php" class="block py-2 px-3 rounded hover:bg-gray-700"> Notification</a>
-          <a href="hotline.php" class="block py-2 px-3 rounded hover:bg-gray-700"> Hotline</a>
-          <a href="audit.php" class="block py-2 px-3 rounded hover:bg-gray-700"> Audit Logs</a>
-          <a href="system_settings.php" class="block py-2 px-3 rounded hover:bg-gray-700"> Settings</a>
-          
-      </nav>
-      <div class="p-4 border-t border-gray-700">
-          <a href="../auth/logout.php" class="block py-2 px-3 rounded bg-red-600 text-center hover:bg-red-700">Logout</a>
-      </div>
-  </aside>
+  <?php include "sidebar.php"; ?>
 
 <!-- Main Content -->
 <main class="flex-1 p-8 overflow-y-auto h-screen">
     <h1 class="text-3xl font-bold text-gray-800 mb-6">
-        Welcome, <?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : "Admin"; ?> 👋
+        Welcome, <?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : "Admin"; ?> s
     </h1>
 
     <!-- User Stats -->
